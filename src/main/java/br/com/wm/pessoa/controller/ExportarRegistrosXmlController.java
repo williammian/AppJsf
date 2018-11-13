@@ -70,7 +70,7 @@ public class ExportarRegistrosXmlController implements Serializable {
 			Element elementPessoa = new Element("Pessoa");			
 			elementPessoa.addContent(new Element("codigo").setText(pessoa.getCodigo().toString()));
 			elementPessoa.addContent(new Element("nome").setText(pessoa.getNome()));
-			elementPessoa.addContent(new Element("sexo").setText(pessoa.getSexo()));
+			elementPessoa.addContent(new Element("sexo").setText(pessoa.getSexo().equals("Masculino") ? "M" : "F"));
 			
 			//FORMATANDO A DATA
 			String dataCadastroFormatada = pessoa.getDataCadastro().format(dateTimeFormatter);
